@@ -28,12 +28,8 @@ const themes = {
       --logo-color: var(--color-text-logo-light-default);
       --btn-bg: var(--color-button-background-light-default);
       --btn-bg-active: var(--color-button-background-light-active);
-
       --bg-page: var(--color-background-light);
       --text-page: var(--color-text-light);
-
-      --tooltip-bg: #f9fafb;
-      --tooltip-color: #111827;
     `,
   },
   dark: {
@@ -47,12 +43,8 @@ const themes = {
       --logo-color: var(--color-text-logo-dark-default);
       --btn-bg: var(--color-button-background-dark-default);
       --btn-bg-active: var(--color-button-background-dark-active);
-
       --bg-page: var(--color-background-dark);
       --text-page: var(--color-text-dark);
-
-      --tooltip-bg: #2f3239;
-      --tooltip-color: #f0f2ff;
     `,
   },
 };
