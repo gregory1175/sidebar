@@ -37,7 +37,7 @@ const SidebarContainer = styled.div.withConfig({
   background: var(--bg-sidebar);
   color: var(--text-default);
   transition: width
-    ${({ opened }) => (opened ? "0.5s ease-out" : "0.3s ease-in-out")};
+    ${({ opened }) => (opened ? "0.25s ease-out" : "0.150s ease-in-out")};
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -77,7 +77,8 @@ const ToggleButton = styled.button.withConfig({
   padding: 6px 8px;
   border-radius: 50%;
   // Анимация ширины зависит от направления: открытие — медленное, закрытие — быстрее
-  transition: background 0.3s ease, right 0.3s ease;
+  transition: background 0.3s ease,
+    right ${({ opened }) => (opened ? "0.25s ease-out" : "0.150s ease-in-out")};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,10 +181,11 @@ const NavItem = styled.div.withConfig({
     opacity: ${({ opened }) => (opened ? 1 : 0)};
     // Анимация появления/исчезновения текста
     transition: max-width
-        ${({ opened }) => (opened ? "0.5s ease-out" : "0.3s ease-in-out")},
-      opacity ${({ opened }) => (opened ? "0.5s ease-out" : "0.3s ease-in-out")},
+        ${({ opened }) => (opened ? "0.25s ease-out" : "0.150s ease-in-out")},
+      opacity
+        ${({ opened }) => (opened ? "0.25s ease-out" : "0.150s ease-in-out")},
       margin-left
-        ${({ opened }) => (opened ? "0.5s ease-out" : "0.3s ease-in-out")};
+        ${({ opened }) => (opened ? "0.25s ease-out" : "0.150s ease-in-out")};
   }
 `;
 
