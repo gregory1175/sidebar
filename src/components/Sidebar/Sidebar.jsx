@@ -77,7 +77,7 @@ const ToggleButton = styled.button.withConfig({
   padding: 6px 8px;
   border-radius: 50%;
   // Анимация ширины зависит от направления: открытие — медленное, закрытие — быстрее
-  ransition: background 0.3s ease, right 0.3s ease;
+  transition: background 0.3s ease, right 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
