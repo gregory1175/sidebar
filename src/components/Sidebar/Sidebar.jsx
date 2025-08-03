@@ -158,12 +158,17 @@ const NavItem = styled.div.withConfig({
     opacity: 1;
   }
 
-  &:active {
+  &.active {
     background: var(--bg-active);
     color: var(--text-active);
+
+    svg {
+      color: var(--text-active);
+    }
   }
 
   svg {
+    color: inherit;
     min-width: 20px;
     font-size: 18px;
     flex-shrink: 0;
@@ -209,8 +214,11 @@ const Sidebar = () => {
   const [opened, setOpened] = useState(true);
   const { toggleTheme } = useTheme();
 
+  const [activePath, setActivePath] = useState("/");
+
   const goToRoute = (path) => {
-    console.log(`going to "${path}"`);
+    setActivePath(path);
+    console.log(`going to ${path}`);
   };
 
   return (
@@ -235,6 +243,7 @@ const Sidebar = () => {
             <NavItem
               opened={opened}
               onClick={() => goToRoute(path)}
+              className={activePath === path ? "active" : ""}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -255,6 +264,7 @@ const Sidebar = () => {
             <NavItem
               opened={opened}
               onClick={() => goToRoute(path)}
+              className={activePath === path ? "active" : ""}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
