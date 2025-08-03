@@ -77,7 +77,7 @@ const ToggleButton = styled.button.withConfig({
   padding: 6px 8px;
   border-radius: 50%;
   // Анимация ширины зависит от направления: открытие — медленное, закрытие — быстрее
-  transition: background 0.3s ease,
+  transition: none;
     right ${({ opened }) => (opened ? "0.25s ease-out" : "0.150s ease-in-out")};
   display: flex;
   align-items: center;
@@ -144,7 +144,7 @@ const NavItem = styled.div.withConfig({
   border-radius: 8px;
   cursor: pointer;
   color: var(--text-default);
-  transition: background 0.3s, color 0.3s;
+  transition: none;
   white-space: nowrap;
   user-select: none;
   overflow: hidden;
