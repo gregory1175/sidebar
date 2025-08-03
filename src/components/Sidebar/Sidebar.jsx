@@ -64,6 +64,24 @@ const Header = styled.div`
   }
 `;
 
+const LogoText = styled.span.withConfig({
+  shouldForwardProp: (prop) => prop !== "opened",
+})`
+  color: var(--logo-color);
+  font-weight: bold;
+  margin-left: ${({ opened }) => (opened ? "8px" : "0")};
+  white-space: nowrap;
+  opacity: ${({ opened }) => (opened ? 1 : 0)};
+  max-width: ${({ opened }) => (opened ? "200px" : "0")};
+  overflow: hidden;
+  transition: opacity
+      ${({ opened }) => (opened ? "0.25s ease-out" : "0.15s ease-in-out")},
+    max-width
+      ${({ opened }) => (opened ? "0.25s ease-out" : "0.15s ease-in-out")},
+    margin-left
+      ${({ opened }) => (opened ? "0.25s ease-out" : "0.15s ease-in-out")};
+`;
+
 const ToggleButton = styled.button.withConfig({
   shouldForwardProp: (prop) => prop !== "opened",
 })`
@@ -228,7 +246,7 @@ const Sidebar = () => {
       <Header>
         <div style={{ display: "flex", alignItems: "center" }}>
           <img src={logo} alt="TensorFlow logo" />
-          {opened && <span>TensorFlow</span>}
+          <LogoText opened={opened}>TensorFlow</LogoText>
         </div>
         <ToggleButton
           opened={opened}
